@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //bateria y wifi en blanco
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith (
-      statusBarColor: Colors.white
+      statusBarColor: Colors.transparent
     ));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
