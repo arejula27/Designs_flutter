@@ -37,7 +37,7 @@ class ScrollDesign extends StatelessWidget {
     return  Container(
           height: double.infinity,
           width: double.infinity,
-          color: Color.fromRGBO(68,171,223,	 0.5),
+          color: Color.fromRGBO(60,172,203,	 1.0),
         );
 
   }
@@ -58,20 +58,42 @@ class ScrollDesign extends StatelessWidget {
   Widget _textos(){
 
     final estilosText = TextStyle(color: Colors.white,fontSize: 50.0);
-    return Column(
-      children: <Widget>[
-        SizedBox(height: 20.0,),
-        Text("11º C",style: estilosText,),
-        Text("Miercoles",style: estilosText,),
-        Expanded(child: Container(),),
-        Icon(Icons.keyboard_arrow_down,size: 70.0,color: Colors.white,)
-      ],
+    return SafeArea(
+      child: Column(
+        children: <Widget>[
+          SizedBox(height: 20.0,),
+          Text("11º C",style: estilosText,),
+          Text("Miercoles",style: estilosText,),
+          Expanded(child: Container(),),
+          Icon(Icons.keyboard_arrow_down,size: 70.0,color: Colors.white,)
+        ],
+      ),
     );
   }  
   Widget _page2() {
 
-    return Center(child:Text("hola2") ,);
+    return Stack(
+      children: <Widget>[
+        _fondo(),
+        _boton(),
+      ],
+    );
 
 
+  }
+  Widget _boton(){
+    return Center(
+      child: RaisedButton(
+        shape: StadiumBorder(),
+        onPressed: (){},
+        color: Colors.blue,
+        textColor: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal:40.0, vertical: 20.0),
+          child: Text("Bienvenidos",style: TextStyle(fontSize: 20.0),),
+        ),
+      )
+      
+    );
   }
 }
